@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="42u-Zs-UWy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="42u-Zs-UWy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H3u-3l-ooo">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="RlQ-Gi-YYI">
@@ -29,17 +29,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="A95-qu-4I2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="H3u-3l-ooo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fm5-xd-oy9"/>
-                            <constraint firstItem="H3u-3l-ooo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GLu-y7-k7s"/>
-                            <constraint firstItem="H3u-3l-ooo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WCs-0r-vi7"/>
-                            <constraint firstAttribute="bottom" secondItem="H3u-3l-ooo" secondAttribute="bottom" id="Wjg-g7-9sa"/>
+                            <constraint firstItem="A95-qu-4I2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3UQ-lO-y9N"/>
+                            <constraint firstItem="A95-qu-4I2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Y1-aM-2d0"/>
+                            <constraint firstItem="H3u-3l-ooo" firstAttribute="top" secondItem="A95-qu-4I2" secondAttribute="bottom" id="7cX-lF-hEE"/>
+                            <constraint firstItem="A95-qu-4I2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8pQ-qT-iXh"/>
+                            <constraint firstAttribute="bottom" secondItem="H3u-3l-ooo" secondAttribute="bottom" id="GUK-uh-sfu"/>
+                            <constraint firstItem="H3u-3l-ooo" firstAttribute="top" secondItem="A95-qu-4I2" secondAttribute="bottom" id="SH9-ya-RtK"/>
+                            <constraint firstItem="H3u-3l-ooo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i5O-iP-aPn"/>
+                            <constraint firstItem="H3u-3l-ooo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m6l-Xd-3jg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="6cJ-L4-LXg"/>
+                    <connections>
+                        <outlet property="searchBar" destination="A95-qu-4I2" id="2in-NX-MfC"/>
+                        <outlet property="tableView" destination="H3u-3l-ooo" id="x2r-eZ-8Yh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
