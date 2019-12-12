@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="42u-Zs-UWy">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,17 +19,56 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="RlQ-Gi-YYI">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" rowHeight="208" id="RlQ-Gi-YYI" customClass="RecipeCell" customModule="RecipeSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="208"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RlQ-Gi-YYI" id="Ust-Oo-Vqo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LRX-4h-IeN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
+                                                </imageView>
+                                                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWs-wO-8JV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-QR-8DR">
+                                                            <rect key="frame" x="20" y="89.666666666666671" width="374" height="28.666666666666671"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="fIl-QR-8DR" secondAttribute="trailing" constant="20" id="47e-gd-N82"/>
+                                                        <constraint firstItem="fIl-QR-8DR" firstAttribute="centerX" secondItem="cWs-wO-8JV" secondAttribute="centerX" id="78C-Mi-h2J"/>
+                                                        <constraint firstItem="fIl-QR-8DR" firstAttribute="centerY" secondItem="cWs-wO-8JV" secondAttribute="centerY" id="QYe-tP-D0k"/>
+                                                        <constraint firstItem="fIl-QR-8DR" firstAttribute="leading" secondItem="cWs-wO-8JV" secondAttribute="leading" constant="20" id="Wff-Bq-5O5"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cWs-wO-8JV" firstAttribute="leading" secondItem="Ust-Oo-Vqo" secondAttribute="leading" id="0cj-ih-iFG"/>
+                                                <constraint firstItem="LRX-4h-IeN" firstAttribute="leading" secondItem="Ust-Oo-Vqo" secondAttribute="leading" id="EEi-k0-DXx"/>
+                                                <constraint firstAttribute="trailing" secondItem="cWs-wO-8JV" secondAttribute="trailing" id="ElB-zG-dWC"/>
+                                                <constraint firstAttribute="bottom" secondItem="LRX-4h-IeN" secondAttribute="bottom" id="dFx-K2-PZa"/>
+                                                <constraint firstItem="cWs-wO-8JV" firstAttribute="top" secondItem="Ust-Oo-Vqo" secondAttribute="top" id="fWx-9m-Xau"/>
+                                                <constraint firstAttribute="trailing" secondItem="LRX-4h-IeN" secondAttribute="trailing" id="lCh-zN-hjo"/>
+                                                <constraint firstAttribute="bottom" secondItem="cWs-wO-8JV" secondAttribute="bottom" id="qhs-9l-BqY"/>
+                                                <constraint firstItem="LRX-4h-IeN" firstAttribute="top" secondItem="Ust-Oo-Vqo" secondAttribute="top" id="rVs-g2-Mxd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeImageView" destination="LRX-4h-IeN" id="IyX-K5-ddI"/>
+                                            <outlet property="recipeLabel" destination="fIl-QR-8DR" id="2Fg-Fr-t6B"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="A95-qu-4I2">
+                            <searchBar contentMode="redraw" placeholder="search for recipe" translatesAutoresizingMaskIntoConstraints="NO" id="A95-qu-4I2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>

@@ -29,6 +29,7 @@ class RecipeSearchController: UIViewController {
     
     override func viewDidLoad() {
         tableView.dataSource = self
+        tableView.delegate = self
         searchBar.delegate = self
         loadRecipes()
         
@@ -54,9 +55,11 @@ extension RecipeSearchController: UITableViewDataSource {
         return recipes.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as? RecipeCell else {
+            fatalError("error")
+        }
         let theRecipes = recipes[indexPath.row]
-        cell.textLabel?.text = theRecipes.label
+        cell.configured(for: theRecipes)
         return cell
     }
     
@@ -75,5 +78,27 @@ extension RecipeSearchController: UISearchBarDelegate {
                      }
                  }
              }
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        guard let searchText = searchBar.text else { return }
+//        RecipeSearchAPI.fetchRecipe(for: searchText) { (result) in
+//                 switch result {
+//                 case .failure(let error):
+//                     print("Error \(error)")
+//                 case .success(let recipe):
+//                     DispatchQueue.main.async {
+//                         self.recipes = recipe
+//                     }
+//                 }
+//             }
+//    }
+}
+}
+
+extension RecipeSearchController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
     }
 }
